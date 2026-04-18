@@ -40,7 +40,7 @@ st.markdown("""
 # ==========================================
 @st.cache_data
 def load_and_engineer_data():
-    df = pd.read_csv("data/air_quality.csv")
+    df = pd.read_csv("air_quality.csv")
     df.columns = df.columns.str.lower().str.replace('.', '_', regex=False).str.replace(' ', '_')
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values(['city', 'date'])
